@@ -23,7 +23,6 @@ public class StandAloneTest {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://rahulshettyacademy.com/client");
 		driver.findElement(By.id("userEmail")).sendKeys("hieupham@gmail.com");
 		driver.findElement(By.id("userPassword")).sendKeys("Phamhieu@215");
 		driver.findElement(By.id("login")).click();
