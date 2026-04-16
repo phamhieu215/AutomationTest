@@ -17,7 +17,7 @@ public class CheckoutPage extends AbstractComponent {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(css = ".action_submit")
+	@FindBy(css = ".action__submit")
 	WebElement submit; 
 	@FindBy(css = "[placeholder='Select Country']")
 	WebElement country; 
@@ -25,13 +25,12 @@ public class CheckoutPage extends AbstractComponent {
 	WebElement selectCountry; 
 	By results = By.cssSelector(".ta-results");
 	public void selectCountry(String countryName) {
-		Actions a= new Actions(driver);
-		a.sendKeys(country,countryName ).build().perform();
+		Actions a = new Actions(driver);
+		a.sendKeys(country, countryName).build().perform();
 		waitForElementToAppear(By.cssSelector(".ta-results"));
 		selectCountry.click();
 	}
 	public ConfirmationPage submitOrder() {
-		
 		submit.click();
 		return new ConfirmationPage(driver);
 	}
